@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicitudes_permisos",
+  "info": {
+    "singularName": "solicitud-permiso",
+    "pluralName": "solicitudes-permisos",
+    "displayName": "Solicitud de Permiso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Vacaciones",
+        "Capacitación",
+        "Trabajo en Campo",
+        "Examen/Certificación",
+        "Permiso"
+      ],
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pendiente",
+        "Aprobado",
+        "Rechazado",
+        "Cancelado",
+        "No Respondida"
+      ],
+      "required": true
+    },
+    "startDate": {
+      "type": "date",
+      "required": true
+    },
+    "endDate": {
+      "type": "date",
+      "required": true
+    },
+    "details": {
+      "type": "text"
+    },
+    "durationHours": {
+      "type": "decimal"
+    },
+    "durationDays": {
+      "type": "integer"
+    },
+    "resumptionDate": {
+      "type": "date"
+    },
+    "rejectionReason": {
+      "type": "string"
+    },
+    "approvedLate": {
+      "type": "boolean",
+      "default": false
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "empleado": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empleado.empleado"
+    },
+    "handoverTasks": {
+      "displayName": "Tareas Delegadas",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tarea-delegada"
+    },
+    "comments": {
+      "displayName": "Comentarios",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.comentario"
+    }
+  }
+}

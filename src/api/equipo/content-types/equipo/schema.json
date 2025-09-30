@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipos",
+  "info": {
+    "singularName": "equipo",
+    "pluralName": "equipos",
+    "displayName": "Equipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "manager": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empleado.empleado"
+    },
+    "empleados": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empleado.empleado",
+      "mappedBy": "equipo"
+    },
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto",
+      "mappedBy": "equipo"
+    }
+  }
+}

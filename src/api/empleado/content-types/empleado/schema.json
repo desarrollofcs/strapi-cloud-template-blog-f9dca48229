@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empleados",
+  "info": {
+    "singularName": "empleado",
+    "pluralName": "empleados",
+    "displayName": "Empleado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "employeeCode": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "password": {
+      "type": "password",
+      "private": true
+    },
+    "avatar": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string"
+    },
+    "hireYear": {
+      "type": "integer"
+    },
+    "birthDate": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "Empleado",
+        "Responsable de Área",
+        "Responsable Secundario",
+        "Administrador"
+      ],
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "equipo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::equipo.equipo",
+      "inversedBy": "empleados"
+    },
+    "vacationLog": {
+      "displayName": "Registro de Vacaciones",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.registro-vacaciones"
+    }
+  }
+}

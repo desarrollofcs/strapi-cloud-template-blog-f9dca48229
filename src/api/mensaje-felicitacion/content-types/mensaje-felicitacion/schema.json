@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mensajes_felicitaciones",
+  "info": {
+    "singularName": "mensaje-felicitacion",
+    "pluralName": "mensajes-felicitaciones",
+    "displayName": "Mensaje de Felicitación"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "color": {
+      "type": "string"
+    },
+    "isDismissed": {
+      "type": "boolean",
+      "default": false
+    },
+    "from": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empleado.empleado"
+    },
+    "to": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empleado.empleado"
+    }
+  }
+}

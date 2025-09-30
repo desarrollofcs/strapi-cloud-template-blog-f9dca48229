@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_comentarios",
+  "info": {
+    "displayName": "Comentario",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "timestamp": {
+      "type": "datetime",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empleado.empleado"
+    }
+  }
+}

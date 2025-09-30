@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_registro_vacaciones",
+  "info": {
+    "displayName": "Registro de Vacación",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "integer",
+      "required": true
+    },
+    "total": {
+      "type": "integer",
+      "required": true
+    },
+    "used": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

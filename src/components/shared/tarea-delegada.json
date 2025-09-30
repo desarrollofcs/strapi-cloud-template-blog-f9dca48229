@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_tarea_delegadas",
+  "info": {
+    "displayName": "Tarea Delegada",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "assignedTo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empleado.empleado"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::proyecto.proyecto"
+    },
+    "comments": {
+      "displayName": "Comentarios de Tarea",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.comentario"
+    }
+  }
+}

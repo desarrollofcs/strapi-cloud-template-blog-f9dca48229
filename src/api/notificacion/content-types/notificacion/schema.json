@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notificaciones",
+  "info": {
+    "singularName": "notificacion",
+    "pluralName": "notificaciones",
+    "displayName": "Notificacion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "isRead": {
+      "type": "boolean",
+      "default": false
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empleado.empleado"
+    },
+    "request": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::solicitud-permiso.solicitud-permiso"
+    }
+  }
+}
